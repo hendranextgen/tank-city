@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Akhir</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#button-up").click(function(){
+                $('#tank').css({'transform': 'rotate(0deg)'});
+                $("#tank").animate({top: '-=50px'});
+            });
+            $("#button-left").click(function(){
+                $('#tank').css({'transform': 'rotate(270deg)'});
+                $("#tank").animate({left: '-=50px'});
+            });
+            $("#button-right").click(function(){
+                $('#tank').css({'transform': 'rotate(90deg)'});
+                $("#tank").animate({left: '+=50px'});
+            });
+            $("#button-down").click(function(){
+                $('#tank').css({'transform': 'rotate(180deg)'});
+                $("#tank").animate({top: '+=50px'});
+            });
+        });
+    </script>
+</head>
+
+<style type="text/css">
+    body{
+        background-color: brown;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 42px;
+        color: #b9936c;
+    }
+
+    #field{
+        background-color: #b9936c;
+        border: 5px solid #b2ad7f;
+    }
+    #tank{
+        top: 50%;
+        left: 47%;
+        width: 76px;
+        height: 165px;
+        display: block;
+        position: relative;
+    }
+
+    .button {
+        height: 64px;
+        width: 64px;
+        padding: 32px;
+        cursor: pointer;
+        border-radius: 50%;
+        position: fixed;
+    }
+
+    .button-up {
+        background-image: url("img/arrow-up-64.png");
+        bottom: 160px;
+        right: 70px;
+    }
+    .button-left {
+        background-image: url("img/arrow-left-64.png");
+        bottom: 110px;
+        right: 120px;
+    }
+    .button-right {
+        background-image: url("img/arrow-right-64.png");
+        bottom: 110px;
+        right: 20px;
+    }
+    .button-down {
+        background-image: url("img/arrow-down-64.png");
+        bottom: 60px;
+        right: 70px;
+    }
+</style>
+
+<body>
+    <div>
+        <h1>TANK CITY</h1>
+
+        <div id="field">
+            <div id="tank">
+                <img src="img/tank-blue-small.png">
+            </div>
+        </div>
+        
+        <button class="button button-up" id="button-up"></button>
+        <button class="button button-left" id="button-left"></button>
+        <button class="button button-right" id="button-right"></button>
+        <button class="button button-down" id="button-down"></button>
+    </div>
+</body>
+<footer>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var WinHeight = $(window).height();
+            var FieldTop = '114';
+            $("#field").height(WinHeight - FieldTop - 40);
+        });
+    </script>
+</footer>
+</html>
